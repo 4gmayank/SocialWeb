@@ -2,8 +2,12 @@
 
 const express = require('express');
 const res = require('express/lib/response');
+const connectDB = require('./config/db');
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
