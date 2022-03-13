@@ -29,3 +29,4 @@ const UserSchema = new mongoose.Schema({
 // Always accessible in user model
 
 module.exports = User = mongoose.model('user', UserSchema);
+// for clean response we use express validator

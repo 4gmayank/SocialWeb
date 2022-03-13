@@ -1,5 +1,6 @@
 /** @format */
 
+const { booleanParser } = require('config/parser');
 const express = require('express');
 const res = require('express/lib/response');
 const connectDB = require('./config/db');
@@ -10,6 +11,10 @@ const app = express();
 connectDB();
 
 const PORT = process.env.PORT || 5000;
+
+// Init Middleware for req.body
+// app.use(booleanParser.json());  // it was seprate package but now included in express
+app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('API Running'));
 
